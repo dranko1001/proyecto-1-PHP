@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gráficos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e6f4ea, #c8e6c9, #ffffff);
+  margin: 0;
+  /* padding-top: 50px; */
+
+}
+
+
+      .container {
+        max-width: 900px;
+        width: 100%;
+      }
+
+      h1 {
+        text-align: center;
+        color: #006400;
+        margin-bottom: 20px;
+      }
+
+      
+      .card-title {
+        color: #006400 !important;
+      }
+
+      
+      .btn-secondary {
+        background-color: #008000;
+        border-color: #008000;
+        color: #fff;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: #006400;
+        border-color: #006400;
+        color: #fff;
+      }
+
+   
+      a {
+        color: #008000;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #004d00;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #008000;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.php">ServiPlus</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+              <a class="nav-link active" href="https://localhost/taller_1_crup_php/index.php">Inicio</a>
+            <!-- </li>
+            <li class="nav-item">
+              <a class="nav-link" href="VIEWS/agregar.php">Agregar persona</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="VIEWS/generar_pdf_dep.php">PDF por DEP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="VIEWS/generar_pdf.php">PDF por usuario</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="https://localhost/taller_1_crup_php/PUBLIC/grafico.html">Gráficos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://localhost/taller_1_crup_php/VIEWS/login.php">Login</a>
+            </li>
+
+
+          <li class="nav-item">
+            <a class="btn btn-dark ms-2" href="CONTROLLERS/logout.php">Cerrar Sesión</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+    <div class="container py-5">
+      <h1 class="mb-5">Visualización de Empleados</h1>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card shadow-sm border-0 rounded-3">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                Empleados por departamento
+              </h5>
+              <canvas
+                id="graficoDepartamento"
+                style="max-height: 300px"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card shadow-sm border-0 rounded-3">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                Empleados por cargo
+              </h5>
+              <canvas id="graficoCargo" style="max-height: 300px"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="../index.php" class="btn btn-secondary">Volver al inicio</a>
+      </div>
+    </div>
+
+    <script src="JS/grafico.js"></script>
+    <script src="JS/grafico_2.js"></script>
+  </body>
+</html>
