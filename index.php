@@ -116,6 +116,7 @@ $resultado = $mysql->efectuarConsulta("
 <div class="container my-5">
   <h1 class="mb-4 text-center">
     Bienvenido <?php echo ($_SESSION['cargo'] == 2) ? 'Administrador' : 'Empleado'; ?>
+    </h1>
 
 
   <h2 class="mb-4 text-success">Generar Reporte:</h2>
@@ -156,8 +157,9 @@ $resultado = $mysql->efectuarConsulta("
 </div>
      -->
 
-  </h1>
+  <h1>
   <h5 class="mb-4 text-success">lista de usuarios:</h5>
+  </h1>
 
     <!-- <div class="mb-3">
       <a href="./VIEWS/agregar.php" >Agregar nueva persona</a>
@@ -165,7 +167,7 @@ $resultado = $mysql->efectuarConsulta("
   <?php endif; ?>
 
 <button id="agregar" class="btn btn-success pb-2 mb-4">agregar persona</button>
-<script>
+<!-- <script>
 function ajax() {
 
 const http =new XMLHttpRequest();
@@ -186,7 +188,7 @@ http.send();
 document.getElementById("agregar").addEventListener("click", function(){
     ajax();
 });
-</script>
+</script> -->
 
 
 
@@ -285,6 +287,49 @@ document.getElementById("graficos").addEventListener("click", function(){
   </div>
 </div>
 
+<!-- <button id="agregar" class="btn btn-success pb-2 mb-4">Agregar persona</button> -->
+
+<div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAgregarLabel">Agregar nuevo empleado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" id="modalAgregarBody">
+        <p>Cargando...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+document.getElementById("agregar").addEventListener("click", function() {
+  const modalAgregar = new bootstrap.Modal(document.getElementById('modalAgregar'));
+  modalAgregar.show();
+
+  
+  if (!document.getElementById("agregar-css")) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "/taller_1_crup_php/ASSETS/agregar.css";
+    link.id = "agregar-css";
+    document.head.appendChild(link);
+  }
+
+  
+  const http = new XMLHttpRequest();
+  http.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("modalAgregarBody").innerHTML = this.responseText;
+    }
+  };
+  http.open("GET", "VIEWS/form_agregar.php", true);
+  http.send();
+});
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

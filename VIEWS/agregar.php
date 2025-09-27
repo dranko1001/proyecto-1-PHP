@@ -12,7 +12,7 @@
     <h1 class="text-center mb-4 text-sena">Agregar nuevo empleado</h1>
 
     <div>
-      <form action="https://localhost/taller_1_crup_php/CONTROLLERS/insertar_empleado.php" method="POST" enctype="multipart/form-data">
+      <form class="form-agregar" action="https://localhost/taller_1_crup_php/CONTROLLERS/insertar_empleado.php" method="POST" enctype="multipart/form-data">
 
         <div>
           <label for="nombre">Nombre</label>
