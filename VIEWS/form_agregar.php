@@ -1,4 +1,4 @@
-<!-- VIEWS/form_agregar.php -->
+
 <form class="form-agregar" action="https://localhost/taller_1_crup_php/CONTROLLERS/insertar_empleado.php" method="POST" enctype="multipart/form-data">
 
   <div>

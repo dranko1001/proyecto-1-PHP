@@ -1,8 +1,8 @@
 <?php
-// Incluir la biblioteca FPDF desde la carpeta 'lib/fpdf'
+
 require('../LIBS/FPDF/fpdf.php');
 
-// Conexión a la base de datos
+
 require_once '../MODELO/MySQL.php';
 
 // Crear una nueva instancia de FPDF

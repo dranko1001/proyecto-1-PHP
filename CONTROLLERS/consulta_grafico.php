@@ -1,6 +1,6 @@
 <?php
-// Se incluye la conexión desde un controlador
-require_once '../MODELO/MySQL.php'; // El archivo debe retornar
+
+require_once '../MODELO/MySQL.php'; 
 $mysql = new MySQL();
 $mysql->conectar();
 
@@ -13,7 +13,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 $data[] = $row;
 }
 
-// Se devuelve en formato JSON
+
 header('Content-Type: application/json');
 echo json_encode($data);
 ?>

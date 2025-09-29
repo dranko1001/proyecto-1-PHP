@@ -6,7 +6,7 @@ class MySQL {
     private $ipServidor = "localhost";
     private $usuarioBase = "root";
     private $contrasena = "";
-    private $nombreBaseDatos = "taller_crud_php";
+    private $nombreBaseDatos = "taller_1_crud_php";
 
     private $conexion;
     
